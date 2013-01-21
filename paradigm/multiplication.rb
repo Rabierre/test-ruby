@@ -5,7 +5,7 @@ class Multiplication
     @elements = Array[1, 2, 3, 4, 5, 6, 7, 8, 9];
   end
 
-  def printAll
+  def print_all
     @elements.each { |x|
       for y in @elements
         print x * y, "\t";
@@ -15,5 +15,5 @@ class Multiplication
 end
 
 multiplication = Multiplication.new;
-multiplication.printAll;
+multiplication.print_all;
 
