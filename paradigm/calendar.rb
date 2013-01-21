@@ -18,7 +18,7 @@ class Calendar
         when 4, 6, 9, 11
           print_days 30
         when 2
-          print_days is_leap_year ? 29 : 28
+          print_days (is_leap_year ? 29 : 28)
       end
       puts
     }
@@ -26,9 +26,7 @@ class Calendar
 
   # @param [int] date_count
   def print_days date_count
-    (1..date_count).to_a.each { |x|
-      print x, (x%7==0 ? "\n" :"\t")
-    }
+    (1..date_count).to_a.each { |x| print x, (x % 7 == 0 ? "\n" :"\t") }
     puts
   end
 
@@ -37,7 +35,8 @@ class Calendar
   end
 end
 
-Calendar.new(2012).print_all  # leap year
+## test code
+Calendar.new(2012).print_all # leap year
 
-puts Calendar.new(2013).is_leap_year  # false
-puts Calendar.new(2012).is_leap_year  # true
+puts Calendar.new(2013).is_leap_year # false
+puts Calendar.new(2012).is_leap_year # true
