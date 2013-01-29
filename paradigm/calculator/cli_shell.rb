@@ -1,9 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/parser.rb')
-load "calculus.rb"
+require File.expand_path(File.dirname(__FILE__) + '/calculus.rb')
 
 # terminal user interface
 class CliShell
   include Parser
+  include Calculus
 
   def initialize
   end
@@ -16,7 +17,7 @@ class CliShell
         exit
       end
       preprocessed_tokens = trans_reverse_polish_notation parse execution
-      print ">> ", Calculus.new.calculate(preprocessed_tokens)
+      print ">> ", calculate(preprocessed_tokens)
       puts
     end
   end

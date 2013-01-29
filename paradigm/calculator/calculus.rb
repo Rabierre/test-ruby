@@ -1,6 +1,6 @@
 load "operator.rb"
 
-class Calculus
+module Calculus
   def calculate tokens
     stack = []
     tokens.each { |token|
@@ -35,11 +35,13 @@ class Calculus
   end
 end
 
+=begin
 # test code
 puts "Calculus class test code"
-puts Calculus.new.calculate [1, 2, "+"]
-puts Calculus.new.operate 1, 2, "+"
+puts Calculus.calculate [1, 2, "+"]
+puts Calculus.operate 1, 2, "+"
 print "4 / 2 = ",  Calculus.new.operate(4, 2, "/"), "\n"
-puts Calculus.new.is_operator "+"
+puts Calculus.is_operator "+"
 puts "===================================="
+=end
 
